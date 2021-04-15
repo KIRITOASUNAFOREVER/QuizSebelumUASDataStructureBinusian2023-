@@ -234,7 +234,7 @@ int main(){
 	int itemsID;
 	
 	 do{
-	 	 if(count==1)
+	 	if(count==1)
         {
 			root = insertNode(root, "0004",4,300);
         	root = insertNode(root, "0003",3,100);
