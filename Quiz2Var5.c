@@ -28,8 +28,7 @@ int max(int a, int b)
 
 struct Node* newNode(int key, char nama[100], char project[100])
 {
-	struct Node* node = (struct Node*)
-						malloc(sizeof(struct Node));
+	struct Node* node = (struct Node*)malloc(sizeof(struct Node));
 	node->key = key;
 	strcpy(node->nama, nama);
 	strcpy(node->project, project);
@@ -87,8 +86,7 @@ struct Node* insert(struct Node* node, int key, char nama[100], char project[100
 	}else
 		return node;
 
-	node->height = 1 + max(height(node->kiri),
-						height(node->kanan));
+	node->height = 1 + max(height(node->kiri),height(node->kanan));
 
 	int balance = getBalance(node);
 
@@ -152,6 +150,7 @@ struct Node* deleteNode(struct Node* root, char nama[100])
         else
         {
             struct Node* temp = minValueNode(root->kanan);
+            root->key = temp->key;
             strcpy(root->nama, temp->nama);
             strcpy(root->project,temp->project);
             root->kanan = deleteNode(root->kanan, temp->nama);
@@ -292,4 +291,3 @@ int main()
 	
 	return 0;
 }
-
