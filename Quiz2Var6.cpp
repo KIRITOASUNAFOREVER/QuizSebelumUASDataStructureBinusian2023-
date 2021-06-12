@@ -234,8 +234,8 @@ struct Tree *deleteNode(Tree *curr, char nimID[],long long int value,char studen
 			curr->key = temp->key;
 			strcpy(curr->nimID,temp->nimID);
 			strcpy(curr->name,temp->name);
-			curr->studentScore = studentScore;
-			curr->left = deleteNode(curr->left, nimID ,temp->key, studentName, studentScore);
+			curr->studentScore = temp->studentScore;
+			curr->left = deleteNode(curr->left, temp->nimID ,temp->key, temp->name, temp->studentScore);
 		}
 	}
 	
